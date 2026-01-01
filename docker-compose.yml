@@ -1,0 +1,36 @@
+version: "3"
+services:
+  directus:
+    image: directus/directus:latest
+    ports:
+      - 8055:8055
+    volumes:
+      - ./uploads:/directus/uploads
+      - ./extensions:/directus/extensions
+    depends_on:
+      - postgres
+    environment:
+      KEY: "outer-worlds-secret-key-123"
+      SECRET: "outer-worlds-secret-access-token-456"
+      ADMIN_EMAIL: "admin@outerworlds.space"
+      ADMIN_PASSWORD: "admin"
+      DB_CLIENT: "pg"
+      DB_HOST: "postgres"
+      DB_PORT: "5432"
+      DB_DATABASE: "directus"
+      DB_USER: "directus"
+      DB_PASSWORD: "directuspassword"
+      CORS_ENABLED: "true"
+      CORS_ORIGIN: "true"
+
+  postgres:
+    image: postgres:15
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: "directus"
+      POSTGRES_PASSWORD: "directuspassword"
+      POSTGRES_DB: "directus"
+
+volumes:
+  postgres_data:
