@@ -21,8 +21,10 @@
       <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
           <h3 class="font-display text-xl mb-4">EARTH → OUTER WORLDS</h3>
-          <p class="text-gray-400 max-w-md font-light">
             A digital museum exhibition exploring the real scale of our solar system and the human endeavor to reach beyond.
+          </p>
+          <p class="text-sm font-mono text-cosmic-cyan tracking-widest mt-4 animate-pulse">
+            By : @Dendy__F
           </p>
         </div>
         <div class="text-right font-mono text-xs text-gray-500 flex flex-col justify-end">
