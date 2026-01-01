@@ -7,8 +7,11 @@
       <h1 class="text-6xl md:text-8xl font-display font-bold text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-500 tracking-tighter mb-4 animate-float">
         EARTH <span class="text-cosmic-cyan">→</span> OUTER WORLDS
       </h1>
-      <p class="text-xl md:text-2xl font-light text-cosmic-detail max-w-2xl px-6">
-        Real planets. Real distances. Real time.
+      <p class="text-lg md:text-xl font-light text-cosmic-detail max-w-3xl px-6 mb-4 leading-relaxed">
+        A digital museum exhibition exploring the real scale of our solar system and the human endeavor to reach beyond.
+      </p>
+      <p class="text-sm font-mono text-cosmic-cyan tracking-widest opacity-90 animate-pulse">
+        By : @Dendy__F
       </p>
       
       <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-70">
