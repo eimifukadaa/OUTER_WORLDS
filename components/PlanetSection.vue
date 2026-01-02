@@ -23,8 +23,8 @@
         </p>
         
         <!-- Interactive Hint -->
-        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
-            <span class="bg-black/50 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full text-xs font-mono tracking-widest text-white">
+        <div class="absolute inset-0 flex items-center justify-center md:opacity-0 md:group-hover:opacity-100 opacity-100 transition-opacity pointer-events-none">
+            <span class="bg-black/50 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full text-xs font-mono tracking-widest text-white animate-pulse">
                 CLICK TO EXPLORE
             </span>
         </div>

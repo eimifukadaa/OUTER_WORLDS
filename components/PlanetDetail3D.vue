@@ -21,12 +21,12 @@
       <!-- Removed UUID display as requested -->
 
       <!-- Center Left: Title and Desc -->
-      <div class="mt-40 md:mt-32 max-w-2xl pointer-events-auto"> <!-- Added more top margin and pointer-events-auto for text selection -->
+      <div class="mt-auto md:mt-32 mb-2 md:mb-0 max-w-2xl w-full pointer-events-auto"> <!-- Added more top margin and pointer-events-auto for text selection -->
         <!-- Removed Title Text -->
-        <h1 class="text-5xl md:text-8xl font-display font-bold text-white tracking-tighter shadow-black drop-shadow-lg">
+        <h1 class="text-3xl md:text-8xl font-display font-bold text-white tracking-tighter shadow-black drop-shadow-lg">
           {{ planet.name.toUpperCase() }}
         </h1>
-        <p class="text-gray-300 mt-6 text-base md:text-lg leading-relaxed glass-panel p-6 rounded-lg backdrop-blur-md border border-white/10 shadow-xl">
+        <p class="text-gray-300 mt-2 md:mt-6 text-sm md:text-lg leading-relaxed glass-panel p-4 md:p-6 rounded-lg backdrop-blur-md border border-white/10 shadow-xl">
           {{ planet.description }}
         </p>
       </div>
@@ -329,16 +329,18 @@ const createRingTexture = (): THREE.Texture => {
     
     // Add noise
     const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-    const data = imageData.data;
-    for (let i = 0; i < data.length; i += 4) {
-        if (data[i+3] > 0) {
-            const noise = (Math.random() - 0.5) * 20;
-            data[i] = Math.max(0, Math.min(255, data[i] + noise));
-            data[i+1] = Math.max(0, Math.min(255, data[i+1] + noise));
-            data[i+2] = Math.max(0, Math.min(255, data[i+2] + noise));
+    if (imageData) {
+        const data = imageData.data;
+        for (let i = 0; i < data.length; i += 4) {
+            if (data[i+3] > 0) {
+                const noise = (Math.random() - 0.5) * 20;
+                data[i] = Math.max(0, Math.min(255, data[i] + noise));
+                data[i+1] = Math.max(0, Math.min(255, data[i+1] + noise));
+                data[i+2] = Math.max(0, Math.min(255, data[i+2] + noise));
+            }
         }
+        ctx.putImageData(imageData, 0, 0);
     }
-    ctx.putImageData(imageData, 0, 0);
 
     const texture = new THREE.CanvasTexture(canvas);
     texture.center.set(0.5, 0.5); 

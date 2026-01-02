@@ -19,8 +19,8 @@ export const usePlanets = () => {
       travel_time_days: 40,
       travel_time_display: '40 DAYS',
       fun_fact: 'Mercury is shrinking! It gets smaller as its iron core cools.',
-      featured_image: 'https://cdn.mos.cms.futurecdn.net/fjbeeRiPRQjQNhizwy7cWX-1024-80.jpg',
-      image_credit: 'NASA/JPL/Messenger',
+      featured_image: 'https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia13/pia13840/PIA13840.jpg',
+      image_credit: 'NASA/JHUAPL/Carnegie',
       order: 1,
       color: '#A5A5A5',
       texture_map: 'https://raw.githubusercontent.com/turban/webgl-earth/master/images/mercury-1024.jpg'

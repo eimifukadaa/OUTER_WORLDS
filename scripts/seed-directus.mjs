@@ -19,8 +19,8 @@ const planetsData = [
       travel_time_days: 40,
       travel_time_display: '40 DAYS',
       fun_fact: 'Mercury is shrinking! It gets smaller as its iron core cools.',
-      featured_image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Mercury_in_true_color.jpg/600px-Mercury_in_true_color.jpg',
-      image_credit: 'NASA/JPL/Messenger',
+      featured_image: 'https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia13/pia13840/PIA13840.jpg',
+      image_credit: 'NASA/JHUAPL/Carnegie',
       order: 1,
       color: '#A5A5A5'
     },
