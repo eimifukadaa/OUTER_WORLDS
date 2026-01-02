@@ -290,6 +290,7 @@ async function seed() {
 
     // Fields for Planets
     const planetFields = [
+        { name: 'uuid', type: 'uuid' },
         { name: 'name', type: 'string' },
         { name: 'slug', type: 'string' },
         { name: 'tagline', type: 'string' },
@@ -317,9 +318,25 @@ async function seed() {
         } catch (e) {}
     }
 
+    // Update planet data with UUIDs (using the same UUIDs as in usePlanets for consistency if running fresh, otherwise just let DB generate if omitted, but better to be explicit)
+    // Actually, we need to inject UUIDs into the planetsData array in this script too.
+    const enhancedPlanetsData = planetsData.map((p, index) => ({
+        ...p,
+        uuid: [
+            'dcf8d8e3-5321-4d32-9382-74d324204523',
+            '849c4501-c50d-4f79-8472-358055642a8b',
+            'e713583a-f10e-4340-911d-231145100912',
+            'c645e317-1065-4f32-8431-753174160431',
+            'd7482312-3021-4321-8932-173821738123',
+            'a8934123-4321-4091-8431-739182371239',
+            'b7834912-4321-4091-8431-739182371239',
+            'f2349123-4321-4091-8431-739182371239'
+        ][index]
+    }));
+
     // Insert Planets
     console.log('Inserting Planets...');
-    const planetPayload = planetsData.map(({ id, ...rest }) => rest);
+    const planetPayload = enhancedPlanetsData.map(({ id, ...rest }) => rest);
     try {
         await client.request(createItems('planets', planetPayload));
         console.log('Inserted planets.');

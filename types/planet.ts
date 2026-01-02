@@ -1,8 +1,10 @@
 export interface Planet {
   id: string;
+  uuid: string;
   name: string;
   slug: string;
   tagline: string;
+  description: string;
   diameter: number; // km
   atmosphere: string;
   avg_temperature: string;

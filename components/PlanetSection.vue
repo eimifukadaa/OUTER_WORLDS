@@ -3,7 +3,10 @@
     <div class="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
       
       <!-- Planet Image Visualization -->
-      <div class="relative group">
+      <div 
+        class="relative group cursor-pointer"
+        @click="$emit('open-detail', planet)"
+      >
         <div class="absolute -inset-4 bg-gradient-to-r from-cosmic-cyan/20 to-cosmic-purple/20 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
         <div class="relative aspect-square rounded-full overflow-hidden border border-white/10 shadow-2xl shadow-black">
           <img 
@@ -13,11 +16,18 @@
             loading="lazy"
           />
           <!-- Overlay Gradient -->
-          <div class="absolute inset-0 bg-gradient-to-tr from-black/60 to-transparent"></div>
+          <div class="absolute inset-0 bg-gradient-to-tr from-black/60 to-transparent pointer-events-none"></div>
         </div>
         <p class="text-xs text-center mt-4 text-gray-500 font-mono opacity-60">
           IMAGE CREDIT: {{ planet.image_credit }}
         </p>
+        
+        <!-- Interactive Hint -->
+        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+            <span class="bg-black/50 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full text-xs font-mono tracking-widest text-white">
+                CLICK TO EXPLORE
+            </span>
+        </div>
       </div>
 
       <!-- Data Content -->
@@ -80,6 +90,8 @@ import type { Planet } from '~/types/planet';
 const props = defineProps<{
   planet: Planet
 }>();
+
+const emit = defineEmits(['open-detail']);
 
 const formatNumber = (num: number) => {
   return new Intl.NumberFormat('id-ID').format(num);
