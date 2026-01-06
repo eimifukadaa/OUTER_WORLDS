@@ -18,32 +18,32 @@
       </header>
 
       <!-- Countdown Display -->
-      <div class="flex flex-col items-center justify-center mb-20">
-        <div class="text-[clamp(2.5rem,10vw,8rem)] font-mono font-bold text-white leading-none tracking-tighter flex items-center justify-center space-x-2 md:space-x-4">
-          <span class="text-cosmic-detail opacity-50 text-[0.4em] mr-2 md:mr-4">T–</span>
+      <div class="flex flex-col items-center justify-center mb-16 md:mb-20 px-2">
+        <div class="text-[clamp(1.1rem,6.5vw,8rem)] font-mono font-bold text-white leading-none tracking-tighter flex items-center justify-center space-x-1 md:space-x-4">
+          <span class="text-cosmic-detail opacity-50 text-[0.4em] mr-1 md:mr-4">T–</span>
           <div class="flex flex-col items-center">
             <span>{{ timeRemaining.years }}</span>
-            <span class="text-[0.15em] font-sans tracking-[0.3em] uppercase text-cosmic-cyan">Years</span>
+            <span class="text-[0.12em] md:text-[0.15em] font-sans tracking-[0.1em] md:tracking-[0.3em] uppercase text-cosmic-cyan">Years</span>
           </div>
           <span class="opacity-20">:</span>
           <div class="flex flex-col items-center">
             <span>{{ String(timeRemaining.days).padStart(3, '0') }}</span>
-            <span class="text-[0.15em] font-sans tracking-[0.3em] uppercase text-cosmic-cyan">Days</span>
+            <span class="text-[0.12em] md:text-[0.15em] font-sans tracking-[0.1em] md:tracking-[0.3em] uppercase text-cosmic-cyan">Days</span>
           </div>
           <span class="opacity-20">:</span>
           <div class="flex flex-col items-center">
             <span>{{ String(timeRemaining.hours).padStart(2, '0') }}</span>
-            <span class="text-[0.15em] font-sans tracking-[0.3em] uppercase text-cosmic-cyan">Hrs</span>
+            <span class="text-[0.12em] md:text-[0.15em] font-sans tracking-[0.1em] md:tracking-[0.3em] uppercase text-cosmic-cyan">Hrs</span>
           </div>
           <span class="opacity-20">:</span>
           <div class="flex flex-col items-center">
             <span>{{ String(timeRemaining.minutes).padStart(2, '0') }}</span>
-            <span class="text-[0.15em] font-sans tracking-[0.3em] uppercase text-cosmic-cyan">Min</span>
+            <span class="text-[0.12em] md:text-[0.15em] font-sans tracking-[0.1em] md:tracking-[0.3em] uppercase text-cosmic-cyan">Min</span>
           </div>
           <span class="opacity-20">:</span>
           <div class="flex flex-col items-center">
             <span>{{ String(timeRemaining.seconds).padStart(2, '0') }}</span>
-            <span class="text-[0.15em] font-sans tracking-[0.3em] uppercase text-cosmic-cyan">Sec</span>
+            <span class="text-[0.12em] md:text-[0.15em] font-sans tracking-[0.1em] md:tracking-[0.3em] uppercase text-cosmic-cyan">Sec</span>
           </div>
         </div>
       </div>
