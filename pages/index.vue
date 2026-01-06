@@ -15,6 +15,9 @@
         <!-- Spacer for hero exit -->
       </div>
 
+      <!-- Mars Mission Countdown -->
+      <MarsCountdown />
+
       <!-- Planet Sections -->
       <div class="space-y-0 bg-space-black">
         <PlanetSection 
@@ -47,6 +50,7 @@
 import { usePlanets } from '~/composables/usePlanets';
 import { useScrollAnimation } from '~/composables/useScrollAnimation';
 import SolarSystem3D from '~/components/SolarSystem3D.vue';
+import MarsCountdown from '~/components/MarsCountdown.vue';
 import MissionSection from '~/components/MissionSection.vue';
 import GallerySection from '~/components/GallerySection.vue';
 import type { Planet } from '~/types/planet';
